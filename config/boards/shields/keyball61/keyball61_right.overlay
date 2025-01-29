@@ -113,6 +113,16 @@
     compatible = "zmk,input-listener";
     device = <&trackball>;
 
+    // Default mouse movement
+    default {
+        bindings = <&m_x>, <&m_y>;
+    };
+
+    // Scroll behavior when in scroll layer
+    scroll {
+        layer = <4>;  // SCROLL layer
+        bindings = <&none>, <&msc_wv>;  // Disable X, use Y for vertical scroll
+    };
   };
 };
 
