@@ -115,13 +115,13 @@
 
     // Default mouse movement
     default {
-        bindings = <&mmv X>, <&mmv Y>;
+        bindings = <&mmv 0>, <&mmv 1>; // X=0, Y=1
     };
 
     // Scroll behavior when in scroll layer
     scroll {
         layer = <4>;  // SCROLL layer
-        bindings = <&none>, <&mmv Y>;  // Disable X, use Y for vertical scroll
+        bindings = <&none>, <&mmv 1>;  // Y=1 for vertical scroll
     };
   };
 };
