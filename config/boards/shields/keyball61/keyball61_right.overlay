@@ -5,6 +5,8 @@
  */
 
 #include "keyball61.dtsi"
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
 
 &default_transform {
     col-offset = <7>;
@@ -109,20 +111,18 @@
 };
 
 / {
-  trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-
-    // Default mouse movement
-    default {
-        bindings = <&mmv 0>, <&mmv 1>; // X=0, Y=1
-    };
-
-    // Scroll behavior when in scroll layer
-    scroll {
-        layer = <4>;  // SCROLL layer
-        bindings = <&none>, <&mmv 1>;  // Y=1 for vertical scroll
+  sensors {
+    compatible = "zmk,sensors";
+    trackball {
+      compatible = "zmk,sensor-trackball";
+      bindings = <&mmv_x>, <&mmv_y>;
     };
   };
 };
 
+&trackball {
+  scroll_layer {
+    layer = <4>;
+    bindings = <&none>, <&msc_wv>; // Disable X, vertical scroll on Y
+  };
+};
