@@ -122,6 +122,6 @@
 &trackball {
   scroll_layer {
     layer = <4>;
-    bindings = <&none>, <&msc_wv>; // Disable X, vertical scroll on Y
+    bindings = <&none>, <&msc_wheel_v>; // Disable X, vertical scroll on Y
   };
 };
