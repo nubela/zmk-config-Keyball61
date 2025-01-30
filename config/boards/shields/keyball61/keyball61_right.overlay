@@ -110,18 +110,20 @@
 };
 
 / {
-  sensors {
-    compatible = "zmk,sensors";
-    trackball {
-      compatible = "zmk,sensor-trackball";
-      bindings = <&mmv_x>, <&mmv_y>;
+    sensors {
+        compatible = "zmk,sensors";
+        trackball {
+            compatible = "zmk,sensor-trackball";
+            // Default mouse movement
+            bindings = <&mmv_x>, <&mmv_y>;
+        };
     };
-  };
 };
 
 &trackball {
-  scroll_layer {
-    layer = <4>;
-    bindings = <&none>, <&msc_wheel_v>; // Disable X, vertical scroll on Y
-  };
+    scroll_layer {
+        layer = <4>;
+        // X-axis disabled, Y-axis = vertical scroll
+        bindings = <&none>, <&mwh>;
+    };
 };
