@@ -5,8 +5,7 @@
  */
 
 #include "keyball61.dtsi"
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>  // Required for mouse wheel behaviors
 
 &default_transform {
     col-offset = <7>;
