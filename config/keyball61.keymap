@@ -25,6 +25,11 @@
     quick-tap-ms = <150>;
 };
 
+&keyball {
+    scroll-layer = <SCROLL>;
+    scroll-strength = <30>;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -88,11 +93,11 @@
         scroll_layer {
             label = "SCROLL";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans
+&trans  &trans        &mwh SCROLL_UP    &trans          &trans          &trans                             &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &trans          &trans                             &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LEFT     &kp DOWN         &kp UP          &kp RIGHT      &trans                             &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans           &trans          &trans          &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans           &trans          &trans          &trans        &trans  &trans  &trans                          &trans  &trans
             >;
         };
 
